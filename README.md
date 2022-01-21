@@ -14,7 +14,7 @@
   - Accuracy와 Loss는 괜찮았지만 실제 이미지 입력해서 나온 결과값이 여전히 좋지 않은 결과 발생
   - 개선 방법 
     - ReLU -> LeakyReLU로 변경. alpha=0.1
-    - Dropout : 0.1 -> 0.05로 변경 !!! Dense가 아니라면 Dropout이 아닌 spatialDropout2D를 사용해야 함    
+    - Dropout : 0.1 -> 0.05로 변경 !!! Dense-Dropout, Conv2D에서는 spatialDropout2D를 사용해야 함
   - 결과
     - 실제 이미지를 입력했을 때 이전보다 훨씬 좋은 결과값 도출.( 컴퓨터 숫자에서 40~50% -> 80~90% )
     - 하지만 여전히 테스트돌린 99%에 미치지 못해 전처리과정을 추가하여 성능 조정 예정
